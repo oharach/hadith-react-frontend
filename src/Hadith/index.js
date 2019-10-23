@@ -1,10 +1,10 @@
-import React from 'react';
-import gql from 'graphql-tag';
-import { Query } from 'react-apollo';
+import React from "react";
+import gql from "graphql-tag";
+import { Query } from "react-apollo";
 
-import HadithList from '../Hadith/HadithList';
-import Loading from '../Loading';
-import ErrorMessage from '../Error';
+import HadithList from "../Hadith/HadithList";
+import Loading from "../Loading";
+import ErrorMessage from "../Error";
 
 const GET_HADITHS = gql`
   query {
@@ -26,11 +26,11 @@ class Hadith extends React.Component {
         {({ loading, error, data }) => {
           if (loading) return <Loading />;
           if (error) return <ErrorMessage error={error} />;
-    
-          return <HadithList hadiths={data.allHadiths} />
+
+          return <HadithList hadiths={data.allHadiths} />;
         }}
       </Query>
-    )
+    );
   }
 }
 
